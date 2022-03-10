@@ -39,7 +39,7 @@ scheduler:
   RfuturePort: 11562
   env:
     - name: EXTRA_R_PACKAGES
-      value: data.table foreach caret lubridate stringr RANN truncnorm pracma matrixStats DEoptim mongolite httr geosphere ClusterR doFuture parallelly bit
+      value: data.table foreach caret lubridate stringr RANN truncnorm pracma matrixStats DEoptim mongolite httr geosphere ClusterR doFuture parallelly bit PerformanceAnalytics
 
 
 worker:
@@ -57,7 +57,7 @@ worker:
     memory: "4GiB"
   env:
     - name: EXTRA_R_PACKAGES
-      value: data.table foreach caret lubridate stringr RANN truncnorm pracma matrixStats DEoptim mongolite httr geosphere ClusterR doFuture parallelly bit
+      value: data.table foreach caret lubridate stringr RANN truncnorm pracma matrixStats DEoptim mongolite httr geosphere ClusterR doFuture parallelly bit PerformanceAnalytics
   resources: {}
   #  limits:
   #    cpu: 1
