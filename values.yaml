@@ -17,12 +17,12 @@ scheduler:
   # serviceType: "LoadBalancer"
   servicePort: 8787
   resources: {}
-  #  limits:
-  #    cpu: 1.8
-  #    memory: 6G
-  #  requests:
-  #    cpu: 1.8
-  #    memory: 6G
+    limits:
+      cpu: 8
+      memory: 30G
+    requests:
+      cpu: 8
+      memory: 30G
   tolerations: []
   nodeSelector: {}
   affinity: {}
@@ -50,11 +50,11 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets:
     #  - name: regcred
-  replicas: 3
+  replicas: 5
   aptPackages: >-
   default_resources:  # overwritten by resource limits if they exist
-    cpu: 1
-    memory: "4GiB"
+    cpu: 8
+    memory: "30GiB"
   env:
     - name: EXTRA_R_PACKAGES
       value: data.table foreach caret lubridate stringr RANN truncnorm pracma matrixStats DEoptim mongolite httr geosphere ClusterR doFuture parallelly bit PerformanceAnalytics
