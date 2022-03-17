@@ -16,7 +16,7 @@ scheduler:
   # serviceType: "NodePort"
   # serviceType: "LoadBalancer"
   servicePort: 8787
-  resources: {}
+  resources: #{}
     limits:
       cpu: 8
       memory: 30G
