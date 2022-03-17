@@ -12,17 +12,20 @@ scheduler:
     pullSecrets:
     #  - name: regcred
   replicas: 1
+  default_resources:
+    cpu: 7
+    memory: "30GiB"
   serviceType: "ClusterIP"
   # serviceType: "NodePort"
   # serviceType: "LoadBalancer"
   servicePort: 8787
-  resources: #{}
-    limits:
-      cpu: 8
-      memory: 30G
-    requests:
-      cpu: 8
-      memory: 30G
+  resources: {}
+  #  limits:
+  #    cpu: 8
+  #    memory: 30G
+  #  requests:
+  #    cpu: 8
+  #    memory: 30G
   tolerations: []
   nodeSelector: {}
   affinity: {}
@@ -50,7 +53,7 @@ worker:
     pullPolicy: IfNotPresent
     pullSecrets:
     #  - name: regcred
-  replicas: 4
+  replicas: 5
   aptPackages: >-
   default_resources:  # overwritten by resource limits if they exist
     cpu: 8
